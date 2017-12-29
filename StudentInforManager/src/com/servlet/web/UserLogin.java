@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.servlet.dao.UserCollection;
 import com.servlet.model.User;
@@ -60,13 +61,18 @@ public class UserLogin extends HttpServlet {
 		if(user == null)
 		{
 			//send a message to user to tell him user name or pass word is not correct.
-			request.setAttribute("Nouser", "user name or pass word is not correct.");
+			request.setAttribute("errorMessage", "user name or pass word is not correct.");
+			request.getRequestDispatcher("index.jsp").forward(request,response);
+			return;
 		}
 		else
 		{
-			System.out.println("log in the system.");
-			//forword to main page
+			//get session
+			HttpSession session = request.getSession();
+			session.setAttribute("user", user);
+			//forward to main page
+			//request.getRequestDispatcher("main.jsp").forward(request,response);
+			response.sendRedirect("main.jsp");
 		}
 	}
-
 }

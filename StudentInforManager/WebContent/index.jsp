@@ -10,7 +10,7 @@
 	<form action="login" method="post">
 		<div style="padding-top: 50px">
 			<table width="750" height = "400" align="center" border="1" background="images/login.jpg">
-				<tr height="200">
+				<tr height="180">
 					<td colspan="4"></td>
 				</tr>
 
@@ -38,6 +38,8 @@
 				<tr heiht = "10">
 					<td></td>
 					<td colspan="3" style="font-style: normal;color: red"> ${errorMessage}</td>
+				</tr>
+				<tr>
 				</tr>
 			</table>
 		</div>
