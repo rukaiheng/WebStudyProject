@@ -58,7 +58,7 @@
 			}
 			else{
 				//create a iframe
-				var content = "<iframe frameborder='0' scrolling='auto' style:'width:100%, height: 100%' src = "+url+"></iframe>";
+				var content = "<iframe frameborder='0' width='100%' height = '100%' scrolling='auto' src = "+url+"></iframe>";
 				//if there is no such a tab, add a tab
 				$("#tabs").tabs('add',{
 					title:text,

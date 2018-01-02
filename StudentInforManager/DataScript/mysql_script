@@ -1,0 +1,39 @@
+/*
+* Create a table if the table is not exist in current data base
+*/
+
+Create table if not exists studentinformanager.grade(
+   gradeId int(12) primary key not null auto_increment,
+   gradename varchar(45) not null,
+   gradeDesc varchar(125)
+);
+
+/*
+*   insert several records into table
+*/
+
+insert into studentinformanager.grade values(null, "09机械一班", "机械设计制造及其自动化09届一班");
+insert into studentinformanager.grade values(null, "08机械一班", "机械设计制造及其自动化09届二班");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+insert into studentinformanager.grade values(null, "xx", "xxxxxx");
+
+
+
