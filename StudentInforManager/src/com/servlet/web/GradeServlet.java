@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.servlet.dao.GradeDao;
+import com.servlet.model.Grade;
 import com.servlet.model.PageBean;
 import com.servlet.util.DBUtil;
 import com.servlet.util.JsonUtil;
@@ -51,18 +52,26 @@ public class GradeServlet extends HttpServlet {
 		String page = request.getParameter("page");
 		String rows = request.getParameter("rows");
 		
+		String gradeName = request.getParameter("gradeName");
+		Grade grade = null;
+		if(gradeName != null)
+		{
+			grade = new Grade();
+			grade.setGradeName(gradeName);
+		}
+		
 		PageBean pageBean = new PageBean(Integer.parseInt(page), Integer.parseInt(rows));
 		
 		DBUtil dbutil = new DBUtil();
 		Connection con =  dbutil.getConnection();
 		
 		//get result set
-		GradeDao grade = new GradeDao();
-		ResultSet resultSet = grade.gadeList(con, pageBean);
+		GradeDao gradeDao = new GradeDao();
+		ResultSet resultSet = gradeDao.gadeList(con, pageBean,grade);
 		
 		//change the result set to json array
 		JSONArray jsonArray = JsonUtil.getJsonArrayFromResultSet(resultSet);
-		int count = grade.gradeCount(con);
+		int count = gradeDao.gradeCount(con);
 		
 		dbutil.disConnection();
 		
